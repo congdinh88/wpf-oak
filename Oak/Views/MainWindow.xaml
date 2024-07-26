@@ -1,0 +1,115 @@
+﻿<Window x:Class="Oak.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Oak"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Title="Oak" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="43"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="43"/>
+            </Grid.RowDefinitions>
+
+            <!--Header bar-->
+            <Grid 
+                Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="1"/>
+                </Grid.RowDefinitions>
+                <StackPanel
+                    Grid.Row="0">
+
+                </StackPanel>
+                <Border
+                    Grid.Row="1"
+                    BorderBrush="LightSeaGreen"
+                    BorderThickness="3"/>
+            </Grid>
+
+            <!--Main-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="3"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Leftbar-->
+                <ScrollViewer 
+                    Grid.Column="0"
+                    HorizontalScrollBarVisibility="Auto"
+                    VerticalScrollBarVisibility="Auto">
+
+                    <StackPanel >
+                        <Expander Header="QL Nhân sự">
+                            <ListView>
+                                <ListViewItem Content="Nhân sự"/>
+                                <ListViewItem Content="Lịch trực"/>
+                                <ListViewItem Content="Giấy xin phép nghỉ"/>
+                            </ListView>
+                        </Expander>
+                        <Expander Header="QL công việc">
+                            <ListView>
+                                <ListViewItem Content="Giao việc"/>
+                                <ListViewItem Content="Báo cáo ngày"/>
+                                <ListViewItem Content="Báo cáo tuần"/>
+                                <ListViewItem Content="Báo tháng"/>
+                            </ListView>
+                        </Expander>
+                        <Expander Header="Công đoàn">
+                            <ListView>
+                                <ListViewItem Content="Quỹ công đoàn"/>
+                                <ListViewItem Content="Xuất quỹ"/>
+                            </ListView>
+                        </Expander>
+                        <Expander Header="QL BHLĐ">
+                            <ListView>
+                                <ListViewItem Content="Theo dõi BHLĐ"/>
+                                <ListViewItem Content="Định biên BHLĐ"/>
+                            </ListView>
+                        </Expander>
+                        <Expander Header="Khác">
+                            <ListView>
+                                <ListViewItem Content="Tra cứu dung sai"/>
+                                <ListViewItem Content="Tra cứu vòng bi"/>
+                                <ListViewItem Content="Đánh số bản vẽ"/>
+                            </ListView>
+                        </Expander>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <GridSplitter 
+                    Grid.Column="1"
+                    HorizontalAlignment="Stretch"/>
+
+                <!--MainContent-->
+                <StackPanel Grid.Column="2">
+
+                </StackPanel>
+
+            </Grid>
+
+            <!--Footerbar-->
+            <Grid 
+                Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border
+                    Grid.Row="0"
+                    BorderBrush="LightSeaGreen"
+                    BorderThickness="3"/>
+                <StackPanel
+                    Grid.Row="1">
+
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
