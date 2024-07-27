@@ -79,7 +79,9 @@
                                 <ListViewItem Content="Giấy xin phép nghỉ"/>
                             </ListView>
                         </Expander>
-                        <Expander Header="QL công việc">
+                        <Expander 
+                            Expanded="Expander_Expanded"
+                            Header="QL công việc">
                             <ListView>
                                 <ListViewItem Content="Giao việc"/>
                                 <ListViewItem Content="Báo cáo ngày"/>
@@ -87,19 +89,25 @@
                                 <ListViewItem Content="Báo tháng"/>
                             </ListView>
                         </Expander>
-                        <Expander Header="Công đoàn">
+                        <Expander 
+                            Expanded="Expander_Expanded"
+                            Header="Công đoàn">
                             <ListView>
                                 <ListViewItem Content="Quỹ công đoàn"/>
                                 <ListViewItem Content="Xuất quỹ"/>
                             </ListView>
                         </Expander>
-                        <Expander Header="QL BHLĐ">
+                        <Expander 
+                            Expanded="Expander_Expanded"
+                            Header="QL BHLĐ">
                             <ListView>
                                 <ListViewItem Content="Theo dõi BHLĐ"/>
                                 <ListViewItem Content="Định biên BHLĐ"/>
                             </ListView>
                         </Expander>
-                        <Expander Header="Khác">
+                        <Expander 
+                            Expanded="Expander_Expanded"
+                            Header="Khác">
                             <ListView>
                                 <ListViewItem Content="Tra cứu dung sai"/>
                                 <ListViewItem Content="Tra cứu vòng bi"/>
@@ -114,9 +122,12 @@
                     HorizontalAlignment="Stretch"/>
 
                 <!--MainContent-->
-                <StackPanel Grid.Column="2">
-
-                </StackPanel>
+                <Frame 
+                    x:Name="MainContent" 
+                    Grid.Column="2" 
+                    NavigationUIVisibility="Hidden">
+                    
+                </Frame>
 
             </Grid>
 

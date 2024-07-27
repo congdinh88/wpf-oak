@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Oak.Pages;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,7 @@ namespace Oak
         public MainWindow()
         {
             InitializeComponent();
+            MainContent.Navigate(new Personnel());
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -33,7 +35,14 @@ namespace Oak
 
         private void Expander_Expanded(object sender, RoutedEventArgs e)
         {
-            
+            Expander expandedExpander = sender as Expander;
+            foreach (Expander expander in leftBar.Children)
+            {
+                if (expander != expandedExpander && expander.IsExpanded)
+                {
+                    expander.IsExpanded = false;
+                }
+            }
         }
     }
 }
