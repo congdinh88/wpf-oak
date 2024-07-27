@@ -30,5 +30,10 @@ namespace Oak
                 e.Cancel = true;
             }
         }
+
+        private void Expander_Expanded(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

@@ -22,10 +22,34 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="1"/>
                 </Grid.RowDefinitions>
-                <StackPanel
+                <Grid
                     Grid.Row="0">
-
-                </StackPanel>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Horizontal">
+                        <ToolBarTray DockPanel.Dock="Top">
+                            <ToolBar>
+                                <Button Content="Tổng hợp" />
+                            </ToolBar>
+                            <ToolBar>
+                                <Button Content="Thêm mới"/>
+                                <Separator/>
+                                <Button Content="Mở"/>
+                                <Button Content="Sửa"/>
+                                <Button Content="Lưu"/>
+                                <Button Content="Làm mới"/>
+                                <Button Content="In"/>
+                            </ToolBar>
+                            
+                        </ToolBarTray>
+                    </StackPanel>
+                    <Grid Grid.Column="2">
+                        <TextBlock Text="d"/>
+                    </Grid>
+                </Grid>
                 <Border
                     Grid.Row="1"
                     BorderBrush="LightSeaGreen"
@@ -45,8 +69,10 @@
                     HorizontalScrollBarVisibility="Auto"
                     VerticalScrollBarVisibility="Auto">
 
-                    <StackPanel >
-                        <Expander Header="QL Nhân sự">
+                    <StackPanel x:Name="leftBar">
+                        <Expander 
+                            Header="QL Nhân sự"
+                            Expanded="Expander_Expanded">
                             <ListView>
                                 <ListViewItem Content="Nhân sự"/>
                                 <ListViewItem Content="Lịch trực"/>
