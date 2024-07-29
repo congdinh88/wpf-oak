@@ -29,47 +29,61 @@ namespace Oak.UserControlApp
     public partial class AutoComplete : UserControl
     {
         public ObservableCollection<DataSuggesList> dataSuggesList { get; set; }
-        ObservableCollection<DataSuggesList> filteredData { get; set; }
+        public ObservableCollection<DataSuggesList> filteredData { get; set; }
+
         public string SelectedColumn
         {
             get { return (string)GetValue(SelectedColumnProperty); }
             set { SetValue(SelectedColumnProperty, value); }
         }
+
         public static readonly DependencyProperty SelectedColumnProperty =
             DependencyProperty.Register("SelectedColumn", typeof(string), typeof(AutoComplete));
+
         public AutoComplete()
         {
             InitializeComponent();
 
-            dataSuggesList = new ObservableCollection<DataSuggesList> {
+            dataSuggesList = new ObservableCollection<DataSuggesList>
+        {
             new DataSuggesList { Column1 = "1", Column2 = "Item1", Column3 = "Description1" },
             new DataSuggesList { Column1 = "2", Column2 = "Item2", Column3 = "Description2" },
-            new DataSuggesList { Column1 = "3", Column2 = "Item3", Column3 = "Description3" }};
+            new DataSuggesList { Column1 = "3", Column2 = "Item3", Column3 = "Description3" }
+        };
+
             dataGrid.ItemsSource = dataSuggesList;
         }
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             string query = textBox.Text.ToLower();
             if (string.IsNullOrEmpty(query))
             {
                 popup.IsOpen = false;
+                return;
             }
-            else
+            var selectedProperty = typeof(DataSuggesList).GetProperty(SelectedColumn, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
+            if (selectedProperty != null)
             {
-                var selectedProperty = typeof(DataSuggesList).GetProperty(SelectedColumn, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
-                if (selectedProperty != null)
+                var matches = dataSuggesList.Where(item =>
                 {
-                    var matches = dataSuggesList.Where(item =>
-                    {
-                        var value = selectedProperty.GetValue(item)?.ToString();
-                        return value != null && value.ToLower().Contains(query);
-                    });
-                    dataGrid.ItemsSource = matches;
+                    var value = selectedProperty.GetValue(item)?.ToString();
+                    return value != null && value.ToLower().Contains(query);
+                }).ToList();
+
+                if (matches.Any())
+                {
+                    filteredData = new ObservableCollection<DataSuggesList>(matches);
+                    dataGrid.ItemsSource = filteredData;
                     popup.IsOpen = true;
                 }
+                else
+                {
+                    popup.IsOpen = false;
+                }
             }
-
         }
+
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (dataGrid.SelectedItem is DataSuggesList selectedItem)

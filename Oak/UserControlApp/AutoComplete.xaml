@@ -7,24 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
-        <TextBox x:Name="textBox"
-                 VerticalAlignment="Center" 
-                 HorizontalAlignment="Center"
-                 Width="200"
-                 TextChanged="TextBox_TextChanged"/>
-        <Popup x:Name="popup" PlacementTarget="{Binding ElementName=textBox}" 
-               StaysOpen="False" AllowsTransparency="True">
-            <Border Background="White">
-                <DataGrid x:Name="dataGrid" 
-                          HeadersVisibility="None"
-                          AutoGenerateColumns="False"
-                          IsReadOnly="True"
-                          Height="auto" Width="auto" 
-                          SelectionChanged="DataGrid_SelectionChanged">
+        <TextBox x:Name="textBox" Width="200" Height="30" Margin="10" TextChanged="TextBox_TextChanged"/>
+        <Popup x:Name="popup" PlacementTarget="{Binding ElementName=textBox}" StaysOpen="False">
+            <Border BorderBrush="Black" BorderThickness="1">
+                <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Column1}" Width="auto"/>
-                        <DataGridTextColumn Binding="{Binding Column2}" Width="auto"/>
-                        <DataGridTextColumn Binding="{Binding Column3}" Width="auto"/>
+                        <DataGridTextColumn Binding="{Binding Column1}"/>
+                        <DataGridTextColumn Binding="{Binding Column2}"/>
+                        <DataGridTextColumn Binding="{Binding Column3}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Border>

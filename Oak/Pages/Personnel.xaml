@@ -88,17 +88,17 @@
                         <StackPanel Margin="10">
                             <Label 
                             Content="Mã nhân viên:"/>
-                            <uc:AutoComplete/>
+                            <uc:AutoComplete SelectedColumn="Column1"/>
                         </StackPanel>
                         <StackPanel Margin="10">
                             <Label 
                                 Content="Họ và tên:"/>
-                            <uc:AutoComplete/>
+                            <uc:AutoComplete SelectedColumn="Column2"/>
                         </StackPanel>
                         <StackPanel Margin="10">
                             <Label 
                                 Content="Tổ:"/>
-                            <uc:AutoComplete/>
+                            <uc:AutoComplete SelectedColumn="Column3"/>
                         </StackPanel>
                         <StackPanel Margin="10">
                             <CheckBox 
