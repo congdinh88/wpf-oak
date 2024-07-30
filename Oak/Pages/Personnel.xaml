@@ -123,11 +123,11 @@
                             <Button 
                                 x:Name="SearchBtn" 
                                 Content="Tìm kiếm" 
-                                Margin="12.5 5 0 5"/>
+                                Margin="5"/>
                             <Button 
                                 x:Name="Cancel" 
                                 Content="Xóa tìm kiếm"
-                                Margin="12.5 5 12.5 5"/>
+                                Margin="5"/>
                         </StackPanel>
                 </Border>
             </Grid>
