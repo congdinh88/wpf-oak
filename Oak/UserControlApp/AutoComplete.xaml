@@ -14,7 +14,9 @@
                     x:Name="dataGrid" 
                     HeadersVisibility="None"
                     AutoGenerateColumns="False" 
-                    SelectionChanged="DataGrid_SelectionChanged">
+                    SelectionChanged="DataGrid_SelectionChanged"
+                    AlternatingRowBackground="LightGoldenrodYellow" 
+                    AlternationCount="2">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Column1}"/>
                         <DataGridTextColumn Binding="{Binding Column2}"/>

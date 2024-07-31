@@ -19,6 +19,7 @@ namespace Oak.UserControlApp
 {
     /// <summary>
     /// Interaction logic for AutoComplete.xaml
+    /* SelectedColumn = giá trị cột trong DataSuggest và được đặt trong mã xaml <uc:AutoComplete SelectedColumn="Column1"/> */
     /// </summary>
     public class DataSuggesList
     {

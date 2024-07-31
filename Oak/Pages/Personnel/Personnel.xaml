@@ -37,7 +37,9 @@
                         IsReadOnly="True" 
                         AutoGenerateColumns="False"
                         SelectionUnit="Cell"
-                        HorizontalAlignment="Left">
+                        HorizontalAlignment="Left"
+                        AlternatingRowBackground="LightGoldenrodYellow"
+                        AlternationCount="2">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Mã NV" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Họ và tên" Binding="{Binding Name}"/>
