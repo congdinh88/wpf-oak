@@ -10,15 +10,14 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Oak.Pages.Personnel
+namespace Oak.Views
 {
     /// <summary>
     /// Interaction logic for AddPersonnel.xaml
     /// </summary>
-    public partial class AddPersonnel : Page
+    public partial class AddPersonnel : Window
     {
         public AddPersonnel()
         {

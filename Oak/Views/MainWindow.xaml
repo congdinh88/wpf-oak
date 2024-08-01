@@ -35,7 +35,9 @@
                                 <Button Content="Tổng hợp" />
                             </ToolBar>
                             <ToolBar>
-                                <Button Content="Thêm mới"/>
+                                <Button 
+                                    Content="Thêm mới"
+                                    Click="Button_Click"/>
                                 <Separator/>
                                 <Button Content="Mở"/>
                                 <Button Content="Sửa"/>
@@ -73,7 +75,7 @@
                         <Expander 
                             Header="QL Nhân sự"
                             Expanded="Expander_Expanded">
-                            <ListView>
+                            <ListView SelectionChanged="ListView_SelectionChanged">
                                 <ListViewItem Content="Nhân sự"/>
                                 <ListViewItem Content="Lịch trực"/>
                                 <ListViewItem Content="Giấy xin phép nghỉ"/>

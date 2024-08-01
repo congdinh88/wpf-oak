@@ -1,4 +1,5 @@
 ﻿using Oak.Pages;
+using Oak.Views;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,7 +21,7 @@ namespace Oak
         public MainWindow()
         {
             InitializeComponent();
-            MainContent.Navigate(new Personnel());
+            
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -42,6 +43,31 @@ namespace Oak
                 {
                     expander.IsExpanded = false;
                 }
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            if(MainContent.Content is Personnel personnel)
+            {
+                AddPersonnel addPersonnel = new AddPersonnel();
+                addPersonnel.Show();
+            }
+            
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListView listView = sender as ListView;
+            ListViewItem selectedItem = listView.SelectedItem as ListViewItem;
+            string str = selectedItem.Content.ToString();
+            switch (str)
+            {
+                case "Nhân sự":
+                    AddPersonnel addPersonnel = new AddPersonnel();
+                    MainContent.Navigate(new Personnel());
+                    break;
             }
         }
     }

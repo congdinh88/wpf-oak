@@ -32,8 +32,8 @@ namespace Oak.Pages
         public Personnel()
         {
             InitializeComponent();
-            DataContext = this;
-            PersonnelGrid.ItemsSource = people;
+            this.DataContext = this;
+            PersonnelGrid.ItemsSource=people;
         }
     }
 }

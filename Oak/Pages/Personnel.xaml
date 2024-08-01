@@ -8,18 +8,18 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Personnel">
-        
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
         <!--Header-->
         <StackPanel Grid.Row="0">
-            
+
         </StackPanel>
-        
+
         <!--Main-->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -28,18 +28,18 @@
             </Grid.ColumnDefinitions>
 
             <ScrollViewer 
-                Grid.Row="1" 
-                HorizontalScrollBarVisibility="Auto" 
-                VerticalScrollBarVisibility="Auto">
+        Grid.Row="1" 
+        HorizontalScrollBarVisibility="Auto" 
+        VerticalScrollBarVisibility="Auto">
                 <StackPanel >
                     <DataGrid 
-                        x:Name="PersonnelGrid" 
-                        IsReadOnly="True" 
-                        AutoGenerateColumns="False"
-                        SelectionUnit="Cell"
-                        HorizontalAlignment="Left"
-                        AlternatingRowBackground="LightGoldenrodYellow"
-                        AlternationCount="2">
+                x:Name="PersonnelGrid" 
+                IsReadOnly="True" 
+                AutoGenerateColumns="False"
+                SelectionUnit="Cell"
+                HorizontalAlignment="Left"
+                AlternatingRowBackground="LightGoldenrodYellow"
+                AlternationCount="2">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Mã NV" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Họ và tên" Binding="{Binding Name}"/>
@@ -63,74 +63,74 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel 
-                    Grid.Row="0"
-                    Background="#1e90ff">
+            Grid.Row="0"
+            Background="#1e90ff">
                     <Button 
-                        Margin="2.5"  HorizontalAlignment="Left" 
-                        Content="x"/>
+                Margin="2.5"  HorizontalAlignment="Left" 
+                Content="x"/>
                 </StackPanel>
                 <ScrollViewer 
-                    Grid.Row="1" 
-                    VerticalScrollBarVisibility="Auto">
+            Grid.Row="1" 
+            VerticalScrollBarVisibility="Auto">
                     <StackPanel>
                         <StackPanel Margin="20 30 10 10">
                             <Label 
-                                Content="Từ ngày:" />
+                        Content="Từ ngày:" />
                             <DatePicker 
-                                x:Name="FromDate" 
-                                SelectedDate="{Binding StartDate, Mode=TwoWay}"/>
+                        x:Name="FromDate" 
+                        SelectedDate="{Binding StartDate, Mode=TwoWay}"/>
                         </StackPanel>
                         <StackPanel Margin="20">
                             <Label 
-                            Content="Đến ngày:"/>
+                    Content="Đến ngày:"/>
                             <DatePicker 
-                            x:Name="ToDate" 
-                            SelectedDate="{Binding EndDate, Mode=TwoWay}"/>
+                    x:Name="ToDate" 
+                    SelectedDate="{Binding EndDate, Mode=TwoWay}"/>
                         </StackPanel>
                         <StackPanel Margin="10">
                             <Label 
-                            Content="Mã nhân viên:"/>
+                    Content="Mã nhân viên:"/>
                             <uc:AutoComplete SelectedColumn="Column1"/>
                         </StackPanel>
                         <StackPanel Margin="10">
                             <Label 
-                                Content="Họ và tên:"/>
+                        Content="Họ và tên:"/>
                             <uc:AutoComplete SelectedColumn="Column2"/>
                         </StackPanel>
                         <StackPanel Margin="10">
                             <Label 
-                                Content="Tổ:"/>
+                        Content="Tổ:"/>
                             <uc:AutoComplete SelectedColumn="Column3"/>
                         </StackPanel>
                         <StackPanel Margin="10">
                             <CheckBox 
-                                x:Name="QuitJob" 
-                                Content="Thôi việc" 
-                                IsChecked="False" />
+                        x:Name="QuitJob" 
+                        Content="Thôi việc" 
+                        IsChecked="False" />
                             <CheckBox 
-                                x:Name="Trainee" 
-                                Margin="0 5 0 0" 
-                                Content="Thử việc" 
-                                IsChecked="False" />
+                        x:Name="Trainee" 
+                        Margin="0 5 0 0" 
+                        Content="Thử việc" 
+                        IsChecked="False" />
                         </StackPanel>
                     </StackPanel>
                 </ScrollViewer>
 
                 <Border  Grid.Row="2" 
-                             BorderBrush="#3000" 
-                             BorderThickness="0 1 0 0" 
-                             Margin="5">
-                        <StackPanel Orientation="Horizontal" 
-                                    HorizontalAlignment="Right">
-                            <Button 
-                                x:Name="SearchBtn" 
-                                Content="Tìm kiếm" 
-                                Margin="5"/>
-                            <Button 
-                                x:Name="Cancel" 
-                                Content="Xóa tìm kiếm"
-                                Margin="5"/>
-                        </StackPanel>
+                     BorderBrush="#3000" 
+                     BorderThickness="0 1 0 0" 
+                     Margin="5">
+                    <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Right">
+                        <Button 
+                        x:Name="SearchBtn" 
+                        Content="Tìm kiếm" 
+                        Margin="5"/>
+                        <Button 
+                        x:Name="Cancel" 
+                        Content="Xóa tìm kiếm"
+                        Margin="5"/>
+                    </StackPanel>
                 </Border>
             </Grid>
         </Grid>
