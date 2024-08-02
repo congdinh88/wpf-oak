@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Oak.UserControlApp"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Height="30">
+    <Grid Height="30" Margin="10 0 10 10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
@@ -16,6 +16,7 @@
             Content="{Binding Title}"/>
         <TextBox
             x:Name="textBox"
+            Margin="10 0 0 0"
             Grid.Column="1"/>
     </Grid>
 </UserControl>
