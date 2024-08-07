@@ -49,36 +49,43 @@
                         <uc:FormInput Title="Tổ:"/>
                         <uc:FormInput Title="Nội dung"/>
                     </StackPanel>
-
-                    <ScrollViewer 
-                        Grid.Row="1" 
-                        HorizontalScrollBarVisibility="Auto" 
-                        VerticalScrollBarVisibility="Auto">
-                        <StackPanel >
-                            <DataGrid 
-                                x:Name="PersonnelGrid" 
-                                AutoGenerateColumns="False"
-                                SelectionUnit="Cell"
-                                HorizontalAlignment="Left"
-                                HeadersVisibility="All"
-                                CanUserAddRows="True"
-                                CanUserDeleteRows="True"
-                                AlternatingRowBackground="LightGoldenrodYellow"
-                                AlternationCount="2">
-                                <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Mã NV" Binding="{Binding Id}"/>
-                                    <DataGridTextColumn Header="Họ và tên" Binding="{Binding Name}"/>
-                                    <DataGridTextColumn Header="Ngày sinh" Binding="{Binding DateOfBirth}"/>
-                                    <DataGridTextColumn Header="Chức vụ" Binding="{Binding JobPosition}"/>
-                                    <DataGridTextColumn Header="Vị trí" Binding="{Binding Workshop}"/>
-                                    <DataGridTextColumn Header="Số ĐT" Binding="{Binding Tell}"/>
-                                    <DataGridTextColumn Header="Địa chỉ" Binding="{Binding Add}"/>
-                                    <DataGridTextColumn Header="SĐT người thân" Binding="{Binding TellOfDear}"/>
-                                    <DataGridTextColumn Header="Ngày tiếp nhận" Binding="{Binding Date1}"/>
-                                </DataGrid.Columns>
-                            </DataGrid>
-                        </StackPanel>
-                    </ScrollViewer>
+                    
+                    <TabControl 
+                        TabStripPlacement="Bottom"
+                        Grid.Row="1" >
+                        <TabItem Header="Chi tiết">
+                            <ScrollViewer 
+    
+                                HorizontalScrollBarVisibility="Auto" 
+                                VerticalScrollBarVisibility="Auto">
+                                <StackPanel >
+                                    <DataGrid 
+                                        x:Name="PersonnelGrid" 
+                                        AutoGenerateColumns="False"
+                                        SelectionUnit="Cell"
+                                        HorizontalAlignment="Left"
+                                        HeadersVisibility="All"
+                                        CanUserAddRows="True"
+                                        CanUserDeleteRows="True"
+                                        AlternatingRowBackground="LightGoldenrodYellow"
+                                        AlternationCount="2">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Mã NV" Binding="{Binding Id}"/>
+                                            <DataGridTextColumn Header="Họ và tên" Binding="{Binding Name}"/>
+                                            <DataGridTextColumn Header="Ngày sinh" Binding="{Binding DateOfBirth}"/>
+                                            <DataGridTextColumn Header="Chức vụ" Binding="{Binding JobPosition}"/>
+                                            <DataGridTextColumn Header="Vị trí" Binding="{Binding Workshop}"/>
+                                            <DataGridTextColumn Header="Số ĐT" Binding="{Binding Tell}"/>
+                                            <DataGridTextColumn Header="Địa chỉ" Binding="{Binding Add}"/>
+                                            <DataGridTextColumn Header="SĐT người thân" Binding="{Binding TellOfDear}"/>
+                                            <DataGridTextColumn Header="Ngày tiếp nhận" Binding="{Binding Date1}"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+                    </TabControl>
+                            
                 </Grid>
             </Grid>
             <StackPanel 
